@@ -1,0 +1,249 @@
+/* ========================================
+   Emotions Section
+   ======================================== */
+
+.emotions-section {
+    background: linear-gradient(135deg, #fef08a 0%, #bef264 50%, #86efac 100%);
+    position: relative;
+    z-index: 20;
+}
+
+/* ========================================
+   Emotions Grid
+   ======================================== */
+
+.emotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+/* ========================================
+   Emotion Button
+   ======================================== */
+
+.emotion-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border: 3px solid #e5e7eb;
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    min-height: 180px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.emotion-btn:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: transparent;
+}
+
+.emotion-btn.active {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3), var(--shadow-lg);
+}
+
+/* ========================================
+   Emotion Button Content
+   ======================================== */
+
+.emotion-emoji {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+    animation: emojiPop 0.5s ease-out;
+    display: block;
+}
+
+.emotion-name {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.emotion-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ========================================
+   Emotion Button Themes
+   ======================================== */
+
+.emotion-btn[data-emotion="happy"]:hover {
+    background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+    border-color: #fbbf24;
+}
+
+.emotion-btn[data-emotion="sad"]:hover {
+    background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+    border-color: #60a5fa;
+}
+
+.emotion-btn[data-emotion="angry"]:hover {
+    background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);
+    border-color: #f87171;
+}
+
+.emotion-btn[data-emotion="calm"]:hover {
+    background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
+    border-color: #34d399;
+}
+
+.emotion-btn[data-emotion="excited"]:hover {
+    background: linear-gradient(135deg, #fae8ff 0%, #f0abfc 100%);
+    border-color: #e879f9;
+}
+
+.emotion-btn[data-emotion="anxious"]:hover {
+    background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 100%);
+    border-color: #a78bfa;
+}
+
+.emotion-btn[data-emotion="love"]:hover {
+    background: linear-gradient(135deg, #ffe4e6 0%, #fda4af 100%);
+    border-color: #fb7185;
+}
+
+.emotion-btn[data-emotion="energetic"]:hover {
+    background: linear-gradient(135deg, #d9f99d 0%, #a3e635 100%);
+    border-color: #84cc16;
+}
+
+/* ========================================
+   Active State Themes
+   ======================================== */
+
+.emotion-btn[data-emotion="happy"].active {
+    background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3), var(--shadow-lg);
+}
+
+.emotion-btn[data-emotion="sad"].active {
+    background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3), var(--shadow-lg);
+}
+
+.emotion-btn[data-emotion="angry"].active {
+    background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.3), var(--shadow-lg);
+}
+
+.emotion-btn[data-emotion="calm"].active {
+    background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
+    box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.3), var(--shadow-lg);
+}
+
+.emotion-btn[data-emotion="excited"].active {
+    background: linear-gradient(135deg, #fae8ff 0%, #f0abfc 100%);
+    box-shadow: 0 0 0 3px rgba(232, 121, 249, 0.3), var(--shadow-lg);
+}
+
+.emotion-btn[data-emotion="anxious"].active {
+    background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 100%);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.3), var(--shadow-lg);
+}
+
+.emotion-btn[data-emotion="love"].active {
+    background: linear-gradient(135deg, #ffe4e6 0%, #fda4af 100%);
+    box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.3), var(--shadow-lg);
+}
+
+.emotion-btn[data-emotion="energetic"].active {
+    background: linear-gradient(135deg, #d9f99d 0%, #a3e635 100%);
+    box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.3), var(--shadow-lg);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes emojiPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.emotion-btn:hover .emotion-emoji {
+    animation: emojiWiggle 0.5s ease-in-out;
+}
+
+@keyframes emojiWiggle {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(10deg) scale(1.1);
+    }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .emotions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--spacing-sm);
+    }
+    
+    .emotion-btn {
+        padding: var(--spacing-md);
+        min-height: 150px;
+    }
+    
+    .emotion-emoji {
+        font-size: 3rem;
+    }
+    
+    .emotion-name {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .emotions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
+    }
+    
+    .emotion-btn {
+        padding: var(--spacing-sm);
+        min-height: 130px;
+    }
+    
+    .emotion-emoji {
+        font-size: 2.5rem;
+    }
+    
+    .emotion-name {
+        font-size: var(--font-size-base);
+    }
+    
+    .emotion-description {
+        font-size: 0.75rem;
+    }
+}

@@ -1,0 +1,261 @@
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fef08a 0%, #bef264 50%, #86efac 100%);
+    overflow: hidden;
+}
+
+/* ========================================
+   Hero Content
+   ======================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: var(--spacing-xl);
+    max-width: 800px;
+}
+
+.hero-title {
+    color: var(--color-white);
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: heroTitleFadeIn 1s ease-out;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xl);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    animation: heroSubtitleFadeIn 1s ease-out 0.3s both;
+}
+
+/* ========================================
+   Scroll Indicator
+   ======================================== */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    display: block;
+    font-size: var(--font-size-3xl);
+    color: var(--color-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   Emoji Container
+   ======================================== */
+
+.emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2rem;
+    user-select: none;
+    opacity: 0.8;
+    will-change: transform;
+}
+
+/* ========================================
+   Emoji Animations
+   ======================================== */
+
+/* 떠다니는 애니메이션 - 6가지 변형 */
+@keyframes float-1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(20px, -30px) rotate(5deg);
+    }
+    50% {
+        transform: translate(-15px, -50px) rotate(-5deg);
+    }
+    75% {
+        transform: translate(25px, -30px) rotate(3deg);
+    }
+}
+
+@keyframes float-2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-25px, -40px) rotate(-7deg);
+    }
+    50% {
+        transform: translate(15px, -60px) rotate(7deg);
+    }
+    75% {
+        transform: translate(-20px, -35px) rotate(-3deg);
+    }
+}
+
+@keyframes float-3 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(30px, -25px) rotate(10deg);
+    }
+    50% {
+        transform: translate(-20px, -55px) rotate(-10deg);
+    }
+    75% {
+        transform: translate(15px, -30px) rotate(5deg);
+    }
+}
+
+@keyframes float-4 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-18px, -35px) rotate(-6deg);
+    }
+    50% {
+        transform: translate(22px, -48px) rotate(6deg);
+    }
+    75% {
+        transform: translate(-28px, -28px) rotate(-4deg);
+    }
+}
+
+@keyframes float-5 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(28px, -42px) rotate(8deg);
+    }
+    50% {
+        transform: translate(-25px, -58px) rotate(-8deg);
+    }
+    75% {
+        transform: translate(20px, -32px) rotate(4deg);
+    }
+}
+
+@keyframes float-6 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-22px, -38px) rotate(-9deg);
+    }
+    50% {
+        transform: translate(18px, -52px) rotate(9deg);
+    }
+    75% {
+        transform: translate(-26px, -30px) rotate(-5deg);
+    }
+}
+
+/* ========================================
+   Hero Animations
+   ======================================== */
+
+@keyframes heroTitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroSubtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 80vh;
+    }
+    
+    .hero-content {
+        padding: var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .emoji {
+        font-size: 1.5rem;
+    }
+    
+    .scroll-indicator {
+        bottom: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .emoji {
+        font-size: 1.2rem;
+    }
+}

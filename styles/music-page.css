@@ -1,0 +1,178 @@
+/* ========================================
+   Music Page Specific Styles
+   ======================================== */
+
+.music-page {
+    min-height: 100vh;
+    background: var(--color-background);
+    transition: background var(--transition-slow);
+    padding: var(--spacing-xl) 0 var(--spacing-3xl) 0;
+}
+
+/* ========================================
+   Back Button
+   ======================================== */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-medium);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    margin-bottom: var(--spacing-xl);
+}
+
+.back-button:hover {
+    transform: translateX(-5px);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.back-icon {
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+}
+
+.back-text {
+    font-size: var(--font-size-base);
+}
+
+/* ========================================
+   Page Header
+   ======================================== */
+
+.music-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.page-title {
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.emotion-emoji {
+    font-size: var(--font-size-5xl);
+    animation: emojiPulse 2s ease-in-out infinite;
+}
+
+.emotion-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes emojiPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ========================================
+   Background Themes for Music Page
+   ======================================== */
+
+.music-page[data-theme="happy"] {
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fde68a 100%);
+}
+
+.music-page[data-theme="sad"] {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
+}
+
+.music-page[data-theme="angry"] {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 50%, #fca5a5 100%);
+}
+
+.music-page[data-theme="calm"] {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #6ee7b7 100%);
+}
+
+.music-page[data-theme="excited"] {
+    background: linear-gradient(135deg, #fae8ff 0%, #f3e8ff 50%, #f0abfc 100%);
+}
+
+.music-page[data-theme="anxious"] {
+    background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 50%, #c4b5fd 100%);
+}
+
+.music-page[data-theme="love"] {
+    background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 50%, #fda4af 100%);
+}
+
+.music-page[data-theme="energetic"] {
+    background: linear-gradient(135deg, #ecfccb 0%, #d9f99d 50%, #bef264 100%);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .music-page {
+        padding: var(--spacing-md) 0 var(--spacing-2xl) 0;
+    }
+    
+    .page-title {
+        font-size: var(--font-size-3xl);
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .emotion-emoji {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .back-button {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .emotion-emoji {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .emotion-description {
+        font-size: var(--font-size-base);
+    }
+}

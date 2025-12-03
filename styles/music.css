@@ -1,0 +1,298 @@
+/* ========================================
+   Music Section
+   ======================================== */
+
+.music-section {
+    min-height: 100vh;
+    background: var(--color-background);
+    transition: background var(--transition-slow);
+    padding: var(--spacing-3xl) 0;
+}
+
+/* ========================================
+   Music Header
+   ======================================== */
+
+.music-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.current-emotion {
+    display: inline-block;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-light);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-full);
+    margin-top: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   Music Grid
+   ======================================== */
+
+.music-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.music-grid.show {
+    opacity: 1;
+}
+
+/* ========================================
+   Music Card
+   ======================================== */
+
+.music-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    animation: musicCardFadeIn 0.5s ease-out backwards;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    min-height: 60px;
+}
+
+.music-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* 카드별 애니메이션 딜레이 */
+.music-card:nth-child(1) { animation-delay: 0.1s; }
+.music-card:nth-child(2) { animation-delay: 0.2s; }
+.music-card:nth-child(3) { animation-delay: 0.3s; }
+.music-card:nth-child(4) { animation-delay: 0.4s; }
+.music-card:nth-child(5) { animation-delay: 0.5s; }
+.music-card:nth-child(6) { animation-delay: 0.6s; }
+.music-card:nth-child(7) { animation-delay: 0.7s; }
+.music-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* ========================================
+   Music Card Content
+   ======================================== */
+
+.music-number {
+    width: 36px;
+    height: 36px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+}
+
+.music-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.music-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.music-title-link {
+    text-decoration: none;
+    display: block;
+}
+
+.music-title-link:hover .music-title {
+    color: var(--color-primary);
+}
+
+.music-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin: 0;
+    transition: color var(--transition-base);
+    cursor: pointer;
+}
+
+.music-lyric {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin: 0;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.music-artist {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin: 0;
+    font-weight: var(--font-weight-medium);
+    flex-shrink: 0;
+}
+
+.music-genre {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.1);
+    padding: 4px var(--spacing-sm);
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+/* ========================================
+   Empty State
+   ======================================== */
+
+.music-empty {
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-md);
+    color: var(--color-text-light);
+}
+
+.music-empty-icon {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.music-empty-text {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.music-empty-hint {
+    font-size: var(--font-size-base);
+    opacity: 0.8;
+}
+
+/* ========================================
+   Background Themes
+   ======================================== */
+
+.music-section[data-theme="happy"] {
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fde68a 100%);
+}
+
+.music-section[data-theme="sad"] {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
+}
+
+.music-section[data-theme="angry"] {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 50%, #fca5a5 100%);
+}
+
+.music-section[data-theme="calm"] {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #6ee7b7 100%);
+}
+
+.music-section[data-theme="excited"] {
+    background: linear-gradient(135deg, #fae8ff 0%, #f3e8ff 50%, #f0abfc 100%);
+}
+
+.music-section[data-theme="anxious"] {
+    background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 50%, #c4b5fd 100%);
+}
+
+.music-section[data-theme="love"] {
+    background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 50%, #fda4af 100%);
+}
+
+.music-section[data-theme="energetic"] {
+    background: linear-gradient(135deg, #ecfccb 0%, #d9f99d 50%, #bef264 100%);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes musicCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .music-section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .music-grid {
+        gap: var(--spacing-xs);
+    }
+    
+    .music-card {
+        padding: var(--spacing-sm) var(--spacing-md);
+        min-height: 50px;
+        gap: var(--spacing-sm);
+    }
+    
+    .music-icon {
+        font-size: 1.2rem;
+    }
+    
+    .music-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .music-artist {
+        font-size: 0.75rem;
+    }
+    
+    .music-number {
+        width: 30px;
+        height: 30px;
+        font-size: var(--font-size-base);
+    }
+    
+    .current-emotion {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .music-card {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+    
+    .music-title {
+        font-size: var(--font-size-sm);
+    }
+    
+    .music-artist,
+    .music-genre {
+        font-size: 0.7rem;
+    }
+    
+    .music-number {
+        width: 28px;
+        height: 28px;
+        font-size: var(--font-size-sm);
+    }
+}
